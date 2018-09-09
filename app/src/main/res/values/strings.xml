@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ImageLoadDemo</string>
+
+    <string name="button_search">Search</string>
+    <string name="search_tooltip">Please enter your query</string>
+    <string name="image_url"><![CDATA[http://farm%1$d.static.flickr.com/%2$s/%3$s_%4$s.jpg!]]></string>
+</resources>

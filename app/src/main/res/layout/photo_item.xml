@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/photo"
+        style="@style/WrapContentLayout"
+        android:layout_height="@dimen/photo_height"
+        android:adjustViewBounds="true"
+        android:padding="@dimen/content_spacing_small"
+        android:scaleType="centerCrop" />
+</layout>
