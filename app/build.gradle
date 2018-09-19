@@ -1,16 +1,21 @@
+ext.versionName = '1.0'
+ext.versionCode = 1
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 27
+    buildToolsVersion prop("version.build.tools")
+    compileSdkVersion prop("version.sdk.max").toInteger()
+
     defaultConfig {
         applicationId "au.com.pjwin.imageloaddemo"
-        minSdkVersion 21
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion prop("version.sdk.min").toInteger()
+        targetSdkVersion prop("version.sdk.max").toInteger()
+        versionName project.versionName
+        versionCode project.versionCode
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         buildConfigField 'String', 'SCHEMA', '"https"'
@@ -37,6 +42,11 @@ android {
 
     dataBinding {
         enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {
